@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Antara and Akshay//Wedding Weekend//EN
+BEGIN:VEVENT
+UID:antara-akshay-wedding-20270321@thepalayana.com
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270325
+SUMMARY:Antara & Akshay's Wedding
+LOCATION:The Palayana Hua Hin\, Thailand
+DESCRIPTION:Welcome Lunch\, Mehendi\, Haldi\, Sangeet\, Baraat\, Wedding Ceremony\, and Reception.
+END:VEVENT
+END:VCALENDAR

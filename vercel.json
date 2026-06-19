@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/registry",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/registry/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/registry/index.html",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "functions": {
+    "api/rsvp.js": {
+      "maxDuration": 10
+    }
+  }
+}

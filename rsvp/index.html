@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9d3040" />
+    <title>RSVP | Antara & Akshay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Italiana&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=9" />
+    <script src="script.js?v=3" defer></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <a class="wordmark" href="../index.html" aria-label="AR squared home">AR<sup>2</sup></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-menu" data-menu-toggle>
+        Menu <i></i>
+      </button>
+      <nav id="page-menu" data-menu aria-label="Wedding pages">
+        <a href="../index.html">Home</a>
+        <a href="../itinerary/index.html">Itinerary</a>
+        <a href="../travel/index.html">Travel &amp; Stay</a>
+        <a class="nav-rsvp active" href="index.html">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="rsvp-intro">
+        <div class="intro-photo" aria-hidden="true"></div>
+        <div class="intro-overlay" aria-hidden="true"></div>
+        <p>Hua Hin, Thailand · March 21—24, 2027</p>
+        <h1>Will you<br /><em>join us?</em></h1>
+        <span>Kindly reply by October 13, 2026</span>
+      </section>
+
+      <section class="form-section" aria-label="Wedding RSVP form">
+        <form data-rsvp-form>
+          <div class="form-heading">
+            <h2>Your reply</h2>
+          </div>
+          <label class="honeypot" aria-hidden="true">
+            <span>Leave this field empty</span>
+            <input name="website" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+          <label>
+            <span>Full name <i>Required</i></span>
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email <i>Required</i></span>
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <fieldset>
+            <legend>Will you be celebrating with us? <i>Required</i></legend>
+            <label>
+              <input type="radio" name="attendance" value="yes" required />
+              <span>Yes</span>
+            </label>
+            <label>
+              <input type="radio" name="attendance" value="no" required />
+              <span>No</span>
+            </label>
+          </fieldset>
+          <label>
+            <span>Party size <i>Required</i></span>
+            <select name="partySize" data-party-size required>
+              <option value="" selected disabled>Select party size</option>
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+            </select>
+          </label>
+          <div class="guest-fields full" data-guest-fields aria-live="polite"></div>
+          <label class="full">
+            <span>Dietary needs or anything you would like to share with us? <i>Optional</i></span>
+            <textarea name="dietary" rows="4"></textarea>
+          </label>
+          <button class="submit-button full" type="submit" data-submit-button>
+            <span data-submit-label>Send my RSVP ↗</span>
+          </button>
+          <p class="form-status full" data-form-status role="status" aria-live="polite"></p>
+          <p class="form-note full">Your response will be emailed securely to Akshay and Antara.</p>
+        </form>
+
+        <div class="success" data-success hidden>
+          <p>Thank you</p>
+          <h2>Your reply<br /><em>is on its way.</em></h2>
+          <span>Akshay and Antara have received your response.</span>
+          <a href="../index.html">Back to the invitation ↗</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

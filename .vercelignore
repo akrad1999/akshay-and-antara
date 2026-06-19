@@ -1,0 +1,8 @@
+.git
+.DS_Store
+.README.md.swp
+.env
+.env.*
+dev-server.js
+README.md
+assets/story/*.png

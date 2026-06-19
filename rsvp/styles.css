@@ -1,0 +1,97 @@
+:root {
+  --ink:#251d19;
+  --paper:#f8f0e3;
+  --red:#9d3040;
+  --gold:#d7a746;
+  --display:"Italiana",Georgia,serif;
+  --sans:"Manrope",Arial,sans-serif;
+  --mono:"DM Mono",monospace;
+  --pad:clamp(1.2rem,4vw,4.5rem);
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.55;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{color:inherit;font:inherit}
+
+.page-header{position:fixed;z-index:100;top:0;left:0;display:grid;width:100%;height:4.8rem;padding:0 var(--pad);border-bottom:1px solid rgba(248,240,227,.16);color:var(--paper);background:rgba(37,29,25,.88);grid-template-columns:1fr auto;align-items:center;backdrop-filter:blur(16px)}
+.wordmark{font-family:var(--display);font-size:1.45rem}
+.wordmark i{font-family:Georgia,serif;font-size:.65em;font-weight:400}
+.wordmark sup{position:relative;top:-.42em;margin-left:.08em;color:var(--gold);font-family:var(--mono);font-size:.42em;letter-spacing:0}
+.page-header nav{display:flex;align-items:center;gap:clamp(1rem,2.4vw,2.6rem);font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase}
+.page-header nav a{padding:.6rem 0;opacity:.65}
+.page-header nav a:hover,.page-header nav .active{opacity:1}
+.page-header nav .active{border-bottom:1px solid}
+.nav-rsvp{padding:.7rem 1rem!important;color:var(--paper);background:var(--red);opacity:1!important}
+.menu-toggle{display:none}
+
+.rsvp-intro{position:relative;display:grid;min-height:100svh;padding:16vh var(--pad) 10vh;color:var(--paper);background:var(--ink);place-content:center;text-align:center;isolation:isolate;overflow:hidden}
+.intro-photo,.intro-overlay{position:absolute;inset:0}
+.intro-photo{z-index:-2;background-image:url("../assets/bridge-walk.jpg");background-position:50% 49%;background-size:cover}
+.intro-overlay{z-index:-1;background:rgba(31,24,21,.62)}
+.rsvp-intro>p,.rsvp-intro>span{font-family:var(--sans);font-size:clamp(.78rem,1.4vw,.92rem);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.rsvp-intro>p{margin:0 0 2rem}
+.rsvp-intro>span{margin-top:2rem;color:rgba(248,240,227,.82)}
+.rsvp-intro h1{margin:0;font-family:var(--display);font-size:clamp(5.2rem,12vw,10rem);font-weight:400;letter-spacing:-.035em;line-height:.86;text-shadow:0 1.2rem 2.6rem rgba(0,0,0,.34)}
+.rsvp-intro h1 em{display:inline-block;margin-top:.35rem;color:#f0c875;font-family:var(--display);font-size:.74em;font-style:normal;font-weight:400;letter-spacing:-.025em}
+.success h2 em{color:#e4b145;font-family:var(--display);font-size:.78em;font-style:normal;font-weight:400;letter-spacing:-.035em}
+
+.form-section{min-height:100svh;padding:14vh var(--pad);background:var(--paper)}
+.form-section form{display:grid;width:min(100%,900px);max-width:900px;margin:0 auto;grid-template-columns:1fr 1fr;gap:1.6rem 2.5rem}
+.form-heading{margin-bottom:2rem;grid-column:1/-1;text-align:center}
+.form-heading p,.success>p{margin:0 0 1rem;color:var(--red);font-family:var(--mono);font-size:.64rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase}
+.form-heading h2,.success h2{margin:0;font-family:var(--display);font-size:clamp(3.7rem,8vw,6.4rem);font-weight:400;letter-spacing:-.06em;line-height:.9}
+.form-section form>label{display:flex;flex-direction:column;gap:.45rem}
+.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.form-section form>label>span,.form-section legend,.guest-fields>p,.guest-fields label>span{font-family:var(--display);font-size:clamp(1.25rem,2.1vw,1.75rem);font-weight:400;letter-spacing:-.025em;line-height:1.05;text-transform:none}
+.form-section form>label>span i,.form-section legend i,.guest-fields label>span i{margin-left:.45rem;color:rgba(37,29,25,.52);font-family:var(--sans);font-size:.48em;font-style:normal;font-weight:600;letter-spacing:.03em;text-transform:uppercase;vertical-align:.12em}
+.form-section input,.form-section select,.form-section textarea{width:100%;min-height:3.35rem;padding:.78rem 0;border:0;border-bottom:1px solid rgba(37,29,25,.3);border-radius:0;outline:0;background:transparent;font-family:var(--sans);font-size:1.03rem;line-height:1.45}
+.form-section input:focus,.form-section select:focus,.form-section textarea:focus{border-color:var(--red)}
+.form-section fieldset{display:grid;margin:0;padding:0;border:0;grid-column:1/-1;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-section legend{margin-bottom:.7rem}
+.form-section fieldset label{cursor:pointer}
+.form-section fieldset input{position:absolute;width:1px;min-height:0;height:1px;margin:0;opacity:0;pointer-events:none}
+.form-section fieldset span{display:block;padding:1rem;border:1px solid rgba(37,29,25,.24);font-family:var(--display);font-size:clamp(1.45rem,2.5vw,2rem);font-weight:400;letter-spacing:-.025em;line-height:1;text-align:center}
+.form-section fieldset input:checked+span{color:var(--paper);background:var(--ink)}
+.full{grid-column:1/-1}
+.guest-fields{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.5rem}
+.guest-fields:empty{display:none}
+.guest-fields>p{margin:0;grid-column:1/-1;color:var(--red)}
+.guest-fields label{display:flex;flex-direction:column;gap:.45rem}
+.submit-button{position:relative;min-height:3.75rem;border:0;color:var(--paper);background:var(--red);cursor:pointer;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background 180ms ease,opacity 180ms ease}
+.submit-button:hover{background:#832634}
+.submit-button:disabled{cursor:wait;opacity:.68}
+.submit-button.is-sending span::after{display:inline-block;width:.8em;height:.8em;margin-left:.7rem;border:1px solid rgba(248,240,227,.45);border-top-color:var(--paper);border-radius:50%;content:"";vertical-align:-.1em;animation:submit-spin .75s linear infinite}
+.form-status{min-height:1.1rem;margin:-.5rem 0 0;color:var(--red);font-size:.86rem;font-weight:600;text-align:center}
+.form-status:empty{display:none}
+.form-note{margin:-.5rem 0 0;color:rgba(37,29,25,.64);font-size:.84rem;line-height:1.5;text-align:center}
+.success{display:grid;min-height:70svh;max-width:800px;margin:0 auto;place-content:center;text-align:center}
+.success>span{color:rgba(37,29,25,.72);font-size:1rem;line-height:1.6}
+.success>a{width:fit-content;margin:2rem auto 0;padding-bottom:.35rem;border-bottom:1px solid;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+@keyframes submit-spin{to{transform:rotate(360deg)}}
+
+@media(max-width:760px){
+  .page-header{height:4.2rem;backdrop-filter:none}
+  .menu-toggle{display:flex;padding:0;border:0;align-items:center;gap:.6rem;background:transparent;font-family:var(--mono);font-size:.56rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+  .menu-toggle i{position:relative;display:block;width:1.5rem;height:1px;background:currentColor}
+  .menu-toggle i::after{position:absolute;top:5px;right:0;width:.9rem;height:1px;background:currentColor;content:""}
+  .page-header nav{position:fixed;inset:4.2rem 0 0;display:flex;padding:4rem 1.2rem;color:var(--paper);background:var(--ink);flex-direction:column;align-items:stretch;gap:0;opacity:0;pointer-events:none;transform:translateY(-1rem);transition:opacity 220ms ease,transform 220ms ease}
+  .page-header nav.open{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .page-header nav a{padding:.7rem 0;border-bottom:1px solid rgba(248,240,227,.18);font-family:var(--display);font-size:3.3rem;font-weight:400;letter-spacing:-.05em;text-transform:none;opacity:1}
+  .nav-rsvp{margin-top:1rem;text-align:center}
+  .rsvp-intro{min-height:90svh}
+  .intro-photo{background-position:50% 50%}
+  .rsvp-intro h1{font-size:clamp(3.7rem,18vw,6rem)}
+  .form-section{padding-top:12vh}
+  .form-section form{grid-template-columns:1fr}
+  .form-heading,.form-section fieldset,.full{grid-column:1}
+  .form-section fieldset{grid-template-columns:1fr}
+  .guest-fields{grid-template-columns:1fr}
+  .guest-fields>p{grid-column:1}
+  .form-heading h2,.success h2{font-size:clamp(3.2rem,15vw,4.9rem)}
+  .form-section form>label>span,.form-section legend,.guest-fields>p,.guest-fields label>span{font-size:clamp(1.2rem,7vw,1.55rem)}
+}

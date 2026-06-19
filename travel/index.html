@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#18372e" />
+    <meta
+      name="description"
+      content="Airport, shuttle, resort, entry, and payment information for Antara and Akshay's wedding in Hua Hin."
+    />
+    <title>Travel &amp; Stay | Antara &amp; Akshay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=Italiana&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=15" />
+    <script src="script.js?v=3" defer></script>
+  </head>
+  <body data-tone="cream">
+    <header class="page-header">
+      <a class="wordmark" href="../index.html" aria-label="AR squared home">AR<sup>2</sup></a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="page-menu"
+        data-menu-toggle
+      >
+        Menu <i></i>
+      </button>
+      <nav id="page-menu" data-menu aria-label="Wedding pages">
+        <a href="../index.html">Home</a>
+        <a href="../itinerary/index.html">Itinerary</a>
+        <a class="active" href="index.html">Travel &amp; Stay</a>
+        <a class="nav-rsvp" href="../rsvp/index.html">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="travel-scene"
+        data-tone="green"
+        data-scene="1"
+        aria-labelledby="travel-title"
+      >
+        <div class="travel-scene-backdrop" aria-hidden="true">
+          <div class="travel-scene-image"></div>
+          <div class="travel-scene-gradient"></div>
+          <span class="scene-progress"><i></i></span>
+        </div>
+
+        <div class="scene-chapters">
+          <article
+            class="scene-chapter scene-chapter-airport"
+            id="arrival"
+            data-scene-chapter="1"
+          >
+            <div class="scene-panel reveal">
+              <p class="eyebrow">Travel &amp; Stay 01</p>
+              <h1 id="travel-title">Fly into<br /><em>Bangkok</em></h1>
+              <p class="scene-intro">
+                Please ensure you have your passport, any required visa, and Thailand Digital Arrival Card confirmation ready before arrival. Pickup details will be shared once we receive your flight information.
+              </p>
+              <dl class="scene-arrival-facts" aria-label="Bangkok arrival essentials">
+                <div>
+                  <dt>Airport options</dt>
+                  <dd>
+                    <span>Suvarnabhumi Airport</span>
+                    <small>Bangkok International (BKK)</small>
+                    <span>Don Mueang International Airport</span>
+                    <small>Bangkok International (DMK)</small>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="scene-chapter scene-chapter-shuttle"
+            id="shuttle"
+            data-scene-chapter="2"
+          >
+            <div class="scene-panel reveal">
+              <p class="step-label">Transfer 02</p>
+              <h2>Take Shuttle to<br /><em>Hua Hin</em></h2>
+              <p>
+                Send Antara or Akshay your flight information, so we can place you on the most convenient
+                shuttle to Hua Hin. We have organized shuttles to pick up our friends and family throughout the 21st of March.
+              </p>
+              <dl class="scene-facts" aria-label="Transfer details">
+                <div>
+                  <dt>Road Time</dt>
+                  <dd>2 hours</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="scene-chapter scene-chapter-resort"
+            id="resort-arrival"
+            data-scene-chapter="3"
+          >
+            <div class="scene-panel reveal">
+              <p class="step-label">Check In 03</p>
+              <h2>Arrive at<br /><em>The Palayana</em></h2>
+              <p>Resort check-in begins at 3:00 PM on March 21. Guests are welcome to arrive before check-in and join us as the wedding celebrations begin. Please let us know if your flight schedule requires any special arrangements.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="resort-stay" id="resort" data-tone="green" aria-labelledby="resort-title">
+        <div class="resort-copy reveal">
+          <p class="eyebrow">Wedding resort</p>
+          <h2 id="resort-title">The Palayana<br /><em>Hua Hin</em></h2>
+          <p>
+            Surrounded by lush tropical gardens, private beaches, and the beauty of the Gulf of Thailand, The Palayana will be home to our entire wedding celebration. Every event will be held on the resort grounds, allowing you to relax and enjoy the weekend without any additional transportation.
+          </p>
+          <address>
+            1390/19 Petchkasem Road<br />
+            Cha-am, Phetchaburi 76120, Thailand
+          </address>
+          <div class="resort-links">
+            <a
+              href="https://www.google.com/maps/search/?api=1&amp;query=The+Palayana+Hua+Hin"
+              target="_blank"
+              rel="noreferrer"
+            >Open map ↗</a>
+            <a href="https://www.thepalayana.com/" target="_blank" rel="noreferrer">View Resort Website ↗</a>
+          </div>
+        </div>
+
+        <aside class="room-cost reveal" aria-labelledby="room-cost-title">
+          <div>
+            <span>Room Cost</span>
+            <h2 id="room-cost-title">
+              3,800 THB/night
+              <small>For 2 people, including breakfast</small>
+              <small>(approximately $118 USD)</small>
+            </h2>
+          </div>
+          <p>
+            Once your RSVP is confirmed, you will receive additional information on how to book your room.
+          </p>
+        </aside>
+
+        <div class="stay-dates reveal" aria-label="Wedding stay dates">
+          <div>
+            <span>Check in</span>
+            <strong>
+              <span>March 21</span>
+              <small>3:00 PM</small>
+            </strong>
+            <p>(Early check-in subject to availability)</p>
+          </div>
+          <i></i>
+          <div>
+            <span>Check out</span>
+            <strong>
+              <span>March 24</span>
+              <small>12:00 PM</small>
+            </strong>
+            <p>(Late check-out subject to availability)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" data-tone="green" aria-labelledby="faq-title">
+        <header class="faq-heading reveal">
+          <h2 id="faq-title">Travel<br /><em>FAQ</em></h2>
+        </header>
+
+        <div class="faq-list">
+          <details class="reveal">
+            <summary>Do I need a visa for Thailand?<i></i></summary>
+            <p>
+              Guests traveling with ordinary passports from the United States, United Kingdom, and Singapore are currently eligible for visa-exempt short tourist stays. Please check the official Thai visa guidelines to confirm your eligibility before travel.
+              <a
+                href="https://washingtondc.thaiembassy.org/en/page/visaexempt-voajul2024"
+                target="_blank"
+                rel="noreferrer"
+              >Check official visa guidance ↗</a>
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>What is the Thailand Digital Arrival Card?<i></i></summary>
+            <p>
+              All non-Thai nationals are required to complete the free Thailand Digital Arrival Card online within three days before arriving in Thailand.
+              <a
+                href="https://tdac.immigration.go.th/arrival-card/"
+                target="_blank"
+                rel="noreferrer"
+              >Open the official TDAC ↗</a>
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>How long should my passport be valid?<i></i></summary>
+            <p>
+              Thai travel guidelines recommend that your passport have at least six months of validity remaining from your date of arrival. Please travel with the same passport used for your TDAC submission.
+              <a
+                href="https://washingtondc.thaiembassy.org/en/page/visaexempt-voajul2024"
+                target="_blank"
+                rel="noreferrer"
+              >Review embassy guidance ↗</a>
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>My flight arrives on March 22. What should I do?<i></i></summary>
+            <p>
+              Please contact Antara or Akshay directly to coordinate your arrival. Scheduled wedding shuttle transportation will be available on March 21 only.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>Do I need cash in Thailand?<i></i></summary>
+            <p>
+              All wedding-hosted meals and events at the resort are included. We recommend carrying some Thai baht for night markets, local vendors, excursions, and any personal purchases outside the resort.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>When will shuttle pickup details be shared?<i></i></summary>
+            <p>
+              Your shuttle schedule, pickup time, and meeting location will be shared once we have received your flight information.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>What food options will be served throughout the event?<i></i></summary>
+            <p>
+              The resort will provide breakfast, lunch, dinner, tea, and snacks throughout the stay, with a variety of vegetarian and non-vegetarian buffet options available. In accordance with our wedding menu, beef and pork will not be served during the resort stay.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <a class="next-page" href="../rsvp/index.html">
+        <span>Next</span>
+        <strong>RSVP</strong>
+        <i>↗</i>
+      </a>
+    </main>
+  </body>
+</html>
