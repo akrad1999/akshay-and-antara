@@ -330,13 +330,95 @@ function setupStoryLightbox() {
 function setupStoryScrollHint() {
   if (!storyRail || !storyRailWrap) return;
 
-  function dismissStoryScrollHint() {
-    if (storyRail.scrollLeft < 24) return;
-    storyRailWrap.classList.add("has-scrolled");
-    storyRail.removeEventListener("scroll", dismissStoryScrollHint);
+  const storyCards = [...storyRail.querySelectorAll(".story-card")];
+  const previousButton = storyRailWrap.querySelector("[data-story-prev]");
+  const nextButton = storyRailWrap.querySelector("[data-story-next]");
+  const currentLabel = storyRailWrap.querySelector("[data-story-current]");
+  const progressBar = storyRailWrap.querySelector("[data-story-progress]");
+  let activeIndex = 0;
+  let scrollFrame;
+
+  if (!storyCards.length) return;
+
+  function getMaxScroll() {
+    return Math.max(0, storyRail.scrollWidth - storyRail.clientWidth);
   }
 
-  storyRail.addEventListener("scroll", dismissStoryScrollHint, { passive: true });
+  function getActiveIndex() {
+    const maxScroll = getMaxScroll();
+    if (storyRail.scrollLeft >= maxScroll - 8) return storyCards.length - 1;
+    if (storyRail.scrollLeft <= 8) return 0;
+
+    const railLeft = storyRail.getBoundingClientRect().left;
+    return storyCards.reduce((closestIndex, card, index) => {
+      const distance = Math.abs(card.getBoundingClientRect().left - railLeft);
+      const closestDistance = Math.abs(
+        storyCards[closestIndex].getBoundingClientRect().left - railLeft,
+      );
+      return distance < closestDistance ? index : closestIndex;
+    }, 0);
+  }
+
+  function updateStoryNavigation() {
+    const maxScroll = getMaxScroll();
+    const atStart = storyRail.scrollLeft <= 8;
+    const atEnd = storyRail.scrollLeft >= maxScroll - 8;
+    const scrollProgress = maxScroll
+      ? storyRail.scrollLeft / maxScroll
+      : 1;
+
+    activeIndex = getActiveIndex();
+    storyRailWrap.classList.toggle("has-scrolled", !atStart);
+    storyRailWrap.classList.toggle("at-end", atEnd);
+
+    if (currentLabel) {
+      currentLabel.textContent = String(activeIndex + 1).padStart(2, "0");
+    }
+    if (progressBar) {
+      const progress = 1 / storyCards.length + scrollProgress * (1 - 1 / storyCards.length);
+      progressBar.style.transform = `scaleX(${Math.min(1, progress)})`;
+    }
+    if (previousButton) previousButton.disabled = atStart;
+    if (nextButton) nextButton.disabled = atEnd;
+  }
+
+  function queueStoryNavigationUpdate() {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+      scrollFrame = null;
+      updateStoryNavigation();
+    });
+  }
+
+  function scrollToStoryCard(index) {
+    const targetIndex = Math.max(0, Math.min(storyCards.length - 1, index));
+    const railPadding = Number.parseFloat(window.getComputedStyle(storyRail).paddingLeft) || 0;
+    storyRail.scrollTo({
+      left: Math.max(0, storyCards[targetIndex].offsetLeft - railPadding),
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
+  }
+
+  previousButton?.addEventListener("click", () => scrollToStoryCard(activeIndex - 1));
+  nextButton?.addEventListener("click", () => scrollToStoryCard(activeIndex + 1));
+
+  storyRail.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+
+    const maxScroll = getMaxScroll();
+    const movingForward = event.deltaY > 0;
+    const atStart = storyRail.scrollLeft <= 8;
+    const atEnd = storyRail.scrollLeft >= maxScroll - 8;
+
+    if ((movingForward && atEnd) || (!movingForward && atStart)) return;
+
+    event.preventDefault();
+    storyRail.scrollBy({ left: event.deltaY, behavior: "auto" });
+  }, { passive: false });
+
+  storyRail.addEventListener("scroll", queueStoryNavigationUpdate, { passive: true });
+  window.addEventListener("resize", queueStoryNavigationUpdate, { passive: true });
+  window.requestAnimationFrame(updateStoryNavigation);
 }
 
 if (!forcePrelude && hasSeenPrelude()) {
