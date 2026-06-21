@@ -3922,8 +3922,8 @@ body.home-ready .intro-content > * {
 .story-controls {
   position: absolute;
   z-index: 9;
+  top: clamp(1.15rem, 2.4vh, 1.8rem);
   right: var(--pad);
-  bottom: clamp(1.15rem, 2.4vh, 1.8rem);
   display: flex;
   padding: 0.34rem;
   border: 1px solid rgba(240, 200, 106, 0.34);
@@ -4481,8 +4481,8 @@ body.story-lightbox-open {
   }
 
   .story-controls {
+    top: 0.72rem;
     right: 1rem;
-    bottom: 0.72rem;
     padding: 0.28rem;
   }
 
