@@ -4445,7 +4445,9 @@ body.story-lightbox-open {
   }
 
   .story-scroll-hint {
+    max-width: calc(100vw - 2rem);
     font-size: 0.48rem;
+    line-height: 1.45;
   }
 
   .story-edge-hint {
@@ -4468,7 +4470,7 @@ body.story-lightbox-open {
   }
 
   .story-details-button {
-    margin-top: 1rem;
+    margin-top: 0.15rem;
     padding: 0.44rem 0.44rem 0.44rem 0.75rem;
     font-size: 0.5rem;
   }
@@ -4476,6 +4478,23 @@ body.story-lightbox-open {
   .story-details-button i {
     width: 1.7rem;
     height: 1.7rem;
+  }
+
+  .story-controls {
+    right: 1rem;
+    bottom: 0.72rem;
+    padding: 0.28rem;
+  }
+
+  .story-control-button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .story-progress {
+    min-width: 6.6rem;
+    padding: 0 0.35rem;
   }
 
   .story-rail {
@@ -4562,6 +4581,10 @@ body.story-lightbox-open {
   .story-edge-hint i,
   .story-details-button i,
   .story-photo {
+    animation: none;
+  }
+
+  .story-rail-wrap.at-end + .story-details-button {
     animation: none;
   }
 }
