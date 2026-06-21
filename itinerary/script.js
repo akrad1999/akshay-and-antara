@@ -3,6 +3,12 @@ const menu = document.querySelector("[data-menu]");
 const progress = document.querySelector("[data-progress]");
 const phaseLabel = document.querySelector("[data-phase-label]");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const itinerarySequence = document.querySelector("[data-itinerary-sequence]");
+const eventScenes = [...document.querySelectorAll("[data-event-scene]")];
+const eventBackdrops = [...document.querySelectorAll("[data-event-backdrop]")];
+const sceneNumber = document.querySelector("[data-scene-number]");
+const sceneProgress = document.querySelector("[data-scene-progress]");
+const sceneDots = [...document.querySelectorAll(".itinerary-scene-dots i")];
 
 const phaseNames = {
   overview: "Weekend overview",
@@ -78,6 +84,38 @@ const revealObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+function activateEventScene(scene) {
+  if (!itinerarySequence) return;
+
+  const activeIndex = Number(scene.dataset.eventScene || 1);
+  itinerarySequence.dataset.activeEvent = String(activeIndex);
+  eventBackdrops.forEach((backdrop) => {
+    backdrop.classList.toggle("is-active", Number(backdrop.dataset.eventBackdrop) === activeIndex);
+  });
+  sceneDots.forEach((dot, index) => dot.classList.toggle("active", index === activeIndex - 1));
+
+  if (sceneNumber) sceneNumber.textContent = String(activeIndex).padStart(2, "0");
+  if (sceneProgress) sceneProgress.style.transform = `scaleX(${activeIndex / eventScenes.length})`;
+}
+
+if (itinerarySequence && eventScenes.length) {
+  const sceneObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        activateEventScene(entry.target);
+      });
+    },
+    {
+      rootMargin: "-43% 0px -43% 0px",
+      threshold: 0,
+    },
+  );
+
+  eventScenes.forEach((scene) => sceneObserver.observe(scene));
+  activateEventScene(eventScenes[0]);
+}
 
 const phaseObserver = new IntersectionObserver(
   (entries) => {

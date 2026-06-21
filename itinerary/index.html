@@ -15,8 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=Italiana&amp;family=Manrope:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
-    <script src="script.js?v=2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=9" />
+    <script src="script.js?v=4" defer></script>
   </head>
   <body data-phase="overview">
     <header class="page-header">
@@ -32,6 +32,7 @@
       </button>
       <nav id="page-menu" data-menu aria-label="Wedding pages">
         <a href="../index.html">Home</a>
+        <a href="../index.html#story">Our Story</a>
         <a class="active" href="index.html">Itinerary</a>
         <a href="../travel/index.html">Travel &amp; Stay</a>
         <a class="nav-rsvp" href="../rsvp/index.html">RSVP</a>
@@ -70,219 +71,199 @@
         <small data-phase-label>Overview</small>
       </div>
 
-      <section class="event event-welcome" id="march-21" data-phase="afternoon" aria-labelledby="welcome-title">
-        <div class="event-glow" aria-hidden="true"></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/welcome-lunch.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+      <section
+        class="itinerary-sequence"
+        data-itinerary-sequence
+        data-active-event="1"
+        aria-label="Wedding weekend events"
+      >
+        <div class="itinerary-backdrop" aria-hidden="true">
+          <figure class="event-backdrop is-active" data-event-backdrop="1">
+            <img src="../assets/itinerary/welcome-lunch.jpg" alt="" width="900" height="900" fetchpriority="high" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="2">
+            <img src="../assets/itinerary/mehendi.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="3">
+            <img src="../assets/itinerary/haldi.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="4">
+            <img src="../assets/itinerary/sangeet.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="5">
+            <img src="../assets/itinerary/baraat.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="6">
+            <img src="../assets/itinerary/wedding-ceremony.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
+          <figure class="event-backdrop" data-event-backdrop="7">
+            <img src="../assets/itinerary/reception.jpg" alt="" width="900" height="900" decoding="async" />
+          </figure>
 
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 21 · Afternoon</strong></p>
-            <h3 id="welcome-title">Welcome <em>Lunch</em></h3>
-            <p>
-              Kick off the wedding celebrations with lunch, drinks, and time to connect with family and friends before the celebrations begin.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
+          <div class="itinerary-wash"></div>
+          <div class="itinerary-scene-count">
+            <span>Event</span>
+            <strong data-scene-number>01</strong>
+            <i></i>
+            <small>07</small>
+          </div>
+          <span class="itinerary-scene-progress"><i data-scene-progress></i></span>
+          <div class="itinerary-scene-dots">
+            <i class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
         </div>
-      </section>
 
-      <section class="event event-mehendi" data-phase="evening" aria-labelledby="mehendi-title">
-        <div class="night-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/mehendi.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+        <div class="event-chapters">
+          <section
+            class="event event-welcome"
+            id="march-21"
+            data-event-scene="1"
+            data-phase="afternoon"
+            aria-labelledby="welcome-title"
+          >
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">01 / 07</span>
+                <p class="event-phase"><strong>March 21 · Afternoon</strong></p>
+              </div>
+              <h3 id="welcome-title">Welcome <em>Lunch</em></h3>
+              <p>
+                Kick off the wedding celebrations with lunch, drinks, and time to connect with family and friends before the celebrations begin.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 21 · Evening</strong></p>
-            <h3 id="mehendi-title">Mehendi</h3>
-            <p>
-              An evening filled with henna, music, laughter, and meaningful moments shared with family and friends.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
+          <section class="event event-mehendi" data-event-scene="2" data-phase="evening" aria-labelledby="mehendi-title">
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">02 / 07</span>
+                <p class="event-phase"><strong>March 21 · Evening</strong></p>
+              </div>
+              <h3 id="mehendi-title">Mehendi</h3>
+              <p>
+                An evening filled with henna, music, laughter, and meaningful moments shared with family and friends.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-      <section class="event event-haldi" id="march-22" data-phase="morning" aria-labelledby="haldi-title">
-        <div class="event-glow" aria-hidden="true"></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/haldi.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+          <section
+            class="event event-haldi"
+            id="march-22"
+            data-event-scene="3"
+            data-phase="morning"
+            aria-labelledby="haldi-title"
+          >
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">03 / 07</span>
+                <p class="event-phase"><strong>March 22 · Morning</strong></p>
+              </div>
+              <h3 id="haldi-title">Haldi</h3>
+              <p>
+                Join us for a beautiful morning of blessings, turmeric, and cherished traditions as our families come together to celebrate this special ritual.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong></strong>March 22 · Morning</strong></p>
-            <h3 id="haldi-title">Haldi</h3>
-            <p>
-              Join us for a beautiful morning of blessings, turmeric, and cherished traditions as our families come together to celebrate this special ritual.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
+          <section class="event event-sangeet" data-event-scene="4" data-phase="night" aria-labelledby="sangeet-title">
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">04 / 07</span>
+                <p class="event-phase"><strong>March 22 · Evening</strong></p>
+              </div>
+              <h3 id="sangeet-title">Sangeet</h3>
+              <p>
+                Get ready for a night of spectacular performances, energetic dancing, and unforgettable memories as we celebrate together.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-      <section class="event event-sangeet" data-phase="night" aria-labelledby="sangeet-title">
-        <div class="night-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/sangeet.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+          <section
+            class="event event-baraat"
+            id="march-23"
+            data-event-scene="5"
+            data-phase="afternoon"
+            aria-labelledby="baraat-title"
+          >
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">05 / 07</span>
+                <p class="event-phase"><strong>March 23 · Afternoon</strong></p>
+              </div>
+              <h3 id="baraat-title">Baraat</h3>
+              <p>
+                The groom’s grand entrance to the ceremony, accompanied by the love, blessings, and excitement of family and friends.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 22 · Evening</strong></p>
-            <h3 id="sangeet-title">Sangeet</h3>
-            <p>
-              Get ready for a night of spectacular performances, energetic dancing, and unforgettable memories as we celebrate together.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
+          <section class="event event-ceremony" data-event-scene="6" data-phase="ceremony" aria-labelledby="ceremony-title">
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">06 / 07</span>
+                <p class="event-phase"><strong>March 23 · Afternoon</strong></p>
+              </div>
+              <h3 id="ceremony-title">Wedding <em>Ceremony</em></h3>
+              <p>
+                A sacred ceremony where we unite in marriage, honoring our traditions and beginning our journey together with our loved ones by our side.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
 
-      <section class="event event-baraat" id="march-23" data-phase="afternoon" aria-labelledby="baraat-title">
-        <div class="event-glow" aria-hidden="true"></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/baraat.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 23 · Afternoon</strong></p>
-            <h3 id="baraat-title">Baraat</h3>
-            <p>
-              The groom’s grand entrance to the ceremony, accompanied by the love, blessings, and excitement of family and friends.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
-
-      <section class="event event-ceremony" data-phase="ceremony" aria-labelledby="ceremony-title">
-        <div class="ceremony-arch" aria-hidden="true"></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/wedding-ceremony.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 23 · Afternoon</strong></p>
-            <h3 id="ceremony-title">Wedding <em>Ceremony</em></h3>
-            <p>
-              A sacred ceremony where we unite in marriage, honoring our traditions and beginning our journey together with our loved ones by our side.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
-
-      <section class="event event-reception" data-phase="night" aria-labelledby="reception-title">
-        <div class="night-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="event-shell">
-          <div class="event-visual reveal">
-            <img
-              class="event-illustration"
-              src="../assets/itinerary/reception.jpg"
-              alt=""
-              width="900"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <article class="event-copy reveal">
-            <p class="event-phase"><strong>March 23 · Evening</strong></p>
-            <h3 id="reception-title">Reception</h3>
-            <p>
-              Celebrate our first evening as a married couple with a night of delicious cuisine, meaningful toasts, and unforgettable moments on the dance floor.
-            </p>
-            <dl class="event-facts">
-              <div><dt>Time</dt><dd>TBD</dd></div>
-              <div><dt>Dress code</dt><dd>TBD</dd></div>
-              <div><dt>Venue</dt><dd>TBD</dd></div>
-            </dl>
-          </article>
+          <section class="event event-reception" data-event-scene="7" data-phase="night" aria-labelledby="reception-title">
+            <article class="event-copy reveal">
+              <div class="event-kicker">
+                <span class="event-count">07 / 07</span>
+                <p class="event-phase"><strong>March 23 · Evening</strong></p>
+              </div>
+              <h3 id="reception-title">Reception</h3>
+              <p>
+                Celebrate our first evening as a married couple with a night of delicious cuisine, meaningful toasts, and unforgettable moments on the dance floor.
+              </p>
+              <dl class="event-facts">
+                <div><dt>Time</dt><dd>TBD</dd></div>
+                <div><dt>Dress code</dt><dd>TBD</dd></div>
+                <div><dt>Venue</dt><dd>TBD</dd></div>
+              </dl>
+            </article>
+          </section>
         </div>
       </section>
 
       <a class="next-page" href="../travel/index.html">
         <span>Next</span>
         <strong>Travel &amp; Stay</strong>
+        <i>↗</i>
       </a>
     </main>
   </body>
