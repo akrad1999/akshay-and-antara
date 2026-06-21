@@ -24,8 +24,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Italiana&family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=42" />
-    <script src="script.js?v=17" defer></script>
+    <link rel="stylesheet" href="styles.css?v=45" />
+    <script src="script.js?v=18" defer></script>
   </head>
   <body class="prelude-pending">
     <div class="prelude" data-prelude aria-label="Open Antara and Akshay's invitation">
@@ -174,7 +174,7 @@
             </span>
           </div>
 
-          <a class="intro-rsvp" href="rsvp/index.html">RSVP <span aria-hidden="true">↗</span></a>
+          <a class="intro-rsvp" href="rsvp/index.html">RSVP</a>
         </div>
 
         <a class="intro-scroll" href="#story">
@@ -190,7 +190,8 @@
             <span class="story-scroll-hint">Swipe or scroll sideways</span>
           </header>
 
-          <div class="story-rail" aria-label="Akshay and Antara's story timeline">
+          <div class="story-rail-wrap">
+            <div class="story-rail" aria-label="Akshay and Antara's story timeline">
             <article class="story-card reveal">
               <div class="story-copy">
                 <span>August 2023</span>
@@ -399,7 +400,16 @@
                 </figure>
               </div>
             </article>
+            </div>
+            <div class="story-edge-hint" data-story-edge-hint aria-hidden="true">
+              <span>Slide</span>
+              <i>→</i>
+            </div>
           </div>
+          <a class="story-details-button reveal" href="#navigation">
+            <span>Wedding details</span>
+            <i aria-hidden="true">↓</i>
+          </a>
         </div>
       </section>
 
@@ -417,6 +427,7 @@
           </button>
           <nav id="main-menu" data-menu aria-label="Wedding pages">
             <a class="active" href="index.html">Home</a>
+            <a href="#story">Our Story</a>
             <a href="itinerary/index.html">Itinerary</a>
             <a href="travel/index.html">Travel &amp; Stay</a>
             <a class="nav-rsvp" href="rsvp/index.html">RSVP</a>

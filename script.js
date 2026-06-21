@@ -11,6 +11,8 @@ const preludeKey = "antara-akshay-intro-seen";
 const forcePrelude = new URLSearchParams(window.location.search).has("intro");
 const collagePanels = [...document.querySelectorAll("[data-collage-panel]")];
 const storyPhotos = [...document.querySelectorAll(".story-photo")];
+const storyRail = document.querySelector(".story-rail");
+const storyRailWrap = document.querySelector(".story-rail-wrap");
 const collagePhotos = [
   { src: "assets/home-collage/IMG_2978.jpeg", position: "50% 48%" },
   { src: "assets/home-collage/IMG_2819.jpeg", position: "50% 58%" },
@@ -325,6 +327,18 @@ function setupStoryLightbox() {
   });
 }
 
+function setupStoryScrollHint() {
+  if (!storyRail || !storyRailWrap) return;
+
+  function dismissStoryScrollHint() {
+    if (storyRail.scrollLeft < 24) return;
+    storyRailWrap.classList.add("has-scrolled");
+    storyRail.removeEventListener("scroll", dismissStoryScrollHint);
+  }
+
+  storyRail.addEventListener("scroll", dismissStoryScrollHint, { passive: true });
+}
+
 if (!forcePrelude && hasSeenPrelude()) {
   prelude.hidden = true;
   document.body.classList.remove("prelude-pending");
@@ -357,5 +371,6 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
 setupStoryLightbox();
+setupStoryScrollHint();
 updateCountdown();
 window.setInterval(updateCountdown, 1000);

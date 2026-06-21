@@ -425,7 +425,7 @@ button {
 .room-cost > div > span {
   color: var(--gold);
   font-family: var(--mono);
-  font-size: 0.52rem;
+  font-size: 1.04rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
