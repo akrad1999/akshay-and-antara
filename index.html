@@ -24,8 +24,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Italiana&family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=45" />
-    <script src="script.js?v=18" defer></script>
+    <link rel="stylesheet" href="styles.css?v=46" />
+    <script src="script.js?v=19" defer></script>
   </head>
   <body class="prelude-pending">
     <div class="prelude" data-prelude aria-label="Open Antara and Akshay's invitation">
@@ -187,7 +187,10 @@
         <div class="story-shell">
           <header class="story-intro reveal">
             <h2 id="story-title">Our Story<br /></h2>
-            <span class="story-scroll-hint">Swipe or Scroll sideways</span>
+            <span class="story-scroll-hint">
+              Swipe, drag, or use the arrows
+              <small>Then continue down</small>
+            </span>
           </header>
 
           <div class="story-rail-wrap">
@@ -405,8 +408,26 @@
               <span>Slide</span>
               <i>→</i>
             </div>
+            <div class="story-controls" aria-label="Our Story chapter controls">
+              <button type="button" class="story-control-button" data-story-prev aria-label="Previous story chapter" disabled>
+                <span aria-hidden="true">←</span>
+              </button>
+              <div class="story-progress" aria-live="polite">
+                <span class="story-progress-count">
+                  <strong data-story-current>01</strong>
+                  <i>/</i>
+                  <span>08</span>
+                </span>
+                <span class="story-progress-track" aria-hidden="true">
+                  <i data-story-progress></i>
+                </span>
+              </div>
+              <button type="button" class="story-control-button" data-story-next aria-label="Next story chapter">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
           </div>
-          <a class="story-details-button reveal" href="#navigation">
+          <a class="story-details-button reveal" href="#navigation" data-story-details>
             <span>Wedding details</span>
             <i aria-hidden="true">↓</i>
           </a>
