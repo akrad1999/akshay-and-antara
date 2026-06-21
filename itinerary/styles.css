@@ -172,8 +172,8 @@ button {
   margin: 0 0 1.5rem;
   color: var(--wine);
   font-family: var(--mono);
-  font-size: 0.59rem;
-  letter-spacing: 0.17em;
+  font-size: 0.80rem;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
 }
 

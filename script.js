@@ -333,6 +333,8 @@ function setupStoryScrollHint() {
   const storyCards = [...storyRail.querySelectorAll(".story-card")];
   const previousButton = storyRailWrap.querySelector("[data-story-prev]");
   const nextButton = storyRailWrap.querySelector("[data-story-next]");
+  const nextButtonIcon = nextButton?.querySelector("span");
+  const detailsLink = document.querySelector("[data-story-details]");
   const currentLabel = storyRailWrap.querySelector("[data-story-current]");
   const progressBar = storyRailWrap.querySelector("[data-story-progress]");
   let activeIndex = 0;
@@ -379,7 +381,15 @@ function setupStoryScrollHint() {
       progressBar.style.transform = `scaleX(${Math.min(1, progress)})`;
     }
     if (previousButton) previousButton.disabled = atStart;
-    if (nextButton) nextButton.disabled = atEnd;
+    if (nextButton) {
+      nextButton.disabled = maxScroll <= 1;
+      nextButton.classList.toggle("is-continue", atEnd);
+      nextButton.setAttribute(
+        "aria-label",
+        atEnd ? "Continue to Wedding Details" : "Next story chapter",
+      );
+    }
+    if (nextButtonIcon) nextButtonIcon.textContent = atEnd ? "↓" : "→";
   }
 
   function queueStoryNavigationUpdate() {
@@ -400,7 +410,13 @@ function setupStoryScrollHint() {
   }
 
   previousButton?.addEventListener("click", () => scrollToStoryCard(activeIndex - 1));
-  nextButton?.addEventListener("click", () => scrollToStoryCard(activeIndex + 1));
+  nextButton?.addEventListener("click", () => {
+    if (storyRailWrap.classList.contains("at-end")) {
+      detailsLink?.click();
+      return;
+    }
+    scrollToStoryCard(activeIndex + 1);
+  });
 
   storyRail.addEventListener("wheel", (event) => {
     if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
