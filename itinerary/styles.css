@@ -716,8 +716,8 @@ button {
   margin: 0;
   color: var(--event-accent);
   font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.12em;
+  font-size: 1rem;
+  letter-spacing: 0.23em;
   text-transform: uppercase;
 }
 
